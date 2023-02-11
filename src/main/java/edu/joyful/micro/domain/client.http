@@ -1,0 +1,7 @@
+POST http://localhost:1010/persons
+Content-Type: application/json
+
+{
+  "firstName": "Alex",
+  "lastName": "Plohoy"
+}
