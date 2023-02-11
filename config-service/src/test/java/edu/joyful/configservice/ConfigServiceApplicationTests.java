@@ -1,10 +1,10 @@
-package edu.joyful.micro;
+package edu.joyful.configservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class MicroApplicationTests {
+class ConfigServiceApplicationTests {
 
     @Test
     void contextLoads() {
