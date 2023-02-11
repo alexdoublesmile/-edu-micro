@@ -3,4 +3,4 @@ spring:
     name: persons
   cloud:
     config:
-      uri: http://localhost/1001
+      uri: http://localhost:1001
