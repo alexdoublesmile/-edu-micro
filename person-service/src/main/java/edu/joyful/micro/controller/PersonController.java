@@ -27,7 +27,7 @@ public class PersonController {
     }
 
     @GetMapping("/{id}")
-    public List<PersonDto> findPersonWithNotes(@PathVariable Long id) {
+    public PersonDto findPersonWithNotes(@PathVariable Long id) {
         return personService.findPersonWithNotes(id);
     }
 }
