@@ -3,10 +3,7 @@ package edu.joyful.noteservice.controller;
 import edu.joyful.noteservice.domain.Note;
 import edu.joyful.noteservice.repository.NoteRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -15,6 +12,11 @@ import java.util.List;
 @RequiredArgsConstructor
 public class NoteController {
     private final NoteRepository noteRepository;
+
+    @PostMapping
+    public Note createPerson(@RequestBody Note note) {
+        return noteRepository.save(note);
+    }
 
     @GetMapping
     public List<Note> getNoteByPersonId(@RequestParam Long personId) {
