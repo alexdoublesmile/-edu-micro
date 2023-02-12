@@ -19,7 +19,7 @@ public class NoteController {
     }
 
     @GetMapping
-    public List<Note> getNoteByPersonId(@RequestParam Long personId) {
+    public List<Note> getNotesByPersonId(@RequestParam Long personId) {
         return noteRepository.findAllByPersonId(personId);
     }
 }
