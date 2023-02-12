@@ -31,6 +31,7 @@ public class ManualPersonClient {
         final ServiceInstance personInstance = discoveryClient.getInstances("person-service").get(0);
         final String serviceUrl = personInstance.getUri() + "/persons/{personId}";
 
+        log.info("Trying to request...");
         return circuitBreakerFactory.create("person-service")
                 .run(() -> restTemplate.getForObject(serviceUrl, PersonDto.class, personId));
 //        return restTemplate.getForObject(serviceUrl, PersonDto.class, personId);
