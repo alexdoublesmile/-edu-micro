@@ -16,7 +16,7 @@ public class ManualPersonClient {
     private final RestTemplate restTemplate;
 
     public PersonDto getPersonById(Long personId) {
-        final ServiceInstance personInstance = discoveryClient.getInstances("persons").get(0);
+        final ServiceInstance personInstance = discoveryClient.getInstances("person-service").get(0);
         final String serviceUrl = personInstance.getUri() + "/persons/{personId}";
         return restTemplate.getForObject(serviceUrl, PersonDto.class, personId);
     }

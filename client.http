@@ -26,4 +26,4 @@ Content-Type: application/json
 }
 
 ###
-GET http://localhost:1011/notes?personId=3
+GET http://localhost:1011/notes
