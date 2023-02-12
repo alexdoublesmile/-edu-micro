@@ -3,10 +3,9 @@ package edu.joyful.micro.controller;
 import edu.joyful.micro.domain.Person;
 import edu.joyful.micro.repository.PersonRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/persons")
@@ -17,5 +16,10 @@ public class PersonController {
     @PostMapping
     public Person createPerson(@RequestBody Person person) {
         return personRepository.save(person);
+    }
+
+    @GetMapping
+    public List<Person> findPersons() {
+        return personRepository.findAll();
     }
 }
