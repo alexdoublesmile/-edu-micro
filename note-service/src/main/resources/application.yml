@@ -9,3 +9,6 @@ resilience4j:
     instances:
       person-service:
         minimumNumberOfCalls: 5
+feign:
+  circuitbreaker:
+    enabled: true

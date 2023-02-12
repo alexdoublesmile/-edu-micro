@@ -1,5 +1,6 @@
 package edu.joyful.noteservice.service;
 
+import edu.joyful.noteservice.client.BalancedPersonClient;
 import edu.joyful.noteservice.client.ManualPersonClient;
 import edu.joyful.noteservice.domain.Note;
 import edu.joyful.noteservice.domain.dto.NoteDto;
@@ -18,7 +19,8 @@ import static java.util.stream.Collectors.toList;
 @RequiredArgsConstructor
 public class NoteService {
     private final NoteRepository noteRepository;
-    private final ManualPersonClient manualPersonClient;
+//    private final ManualPersonClient personClient;
+    private final BalancedPersonClient personClient;
 
     public List<NoteDto> findAllWithPerson(Long personId) {
         return noteRepository.findAllByPersonId(personId)
@@ -35,7 +37,7 @@ public class NoteService {
     }
 
     private NoteDto convertToDto(Note note) {
-        PersonDto personDto = manualPersonClient.getPersonById(note.getPersonId());
+        PersonDto personDto = personClient.findPersonById(note.getPersonId());
 
         return NoteDto.builder()
                 .id(note.getId())

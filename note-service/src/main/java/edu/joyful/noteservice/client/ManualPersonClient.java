@@ -27,7 +27,7 @@ public class ManualPersonClient {
 //    @RateLimiter(name = "person-service")
 //    @Bulkhead(name = "person-service")
 //    @CircuitBreaker(name = "person-service")
-    public PersonDto getPersonById(Long personId) {
+    public PersonDto findPersonById(Long personId) {
         final ServiceInstance personInstance = discoveryClient.getInstances("person-service").get(0);
         final String serviceUrl = personInstance.getUri() + "/persons/{personId}";
 
