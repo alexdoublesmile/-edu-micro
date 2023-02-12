@@ -1,7 +1,7 @@
 package edu.joyful.micro.controller;
 
-import edu.joyful.micro.PersonServiceApplication;
 import edu.joyful.micro.domain.Person;
+import edu.joyful.micro.domain.dto.PersonDto;
 import edu.joyful.micro.repository.PersonRepository;
 import edu.joyful.micro.service.PersonService;
 import lombok.RequiredArgsConstructor;
