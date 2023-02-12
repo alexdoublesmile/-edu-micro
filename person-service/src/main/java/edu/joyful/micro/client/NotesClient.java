@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.List;
 
-@FeignClient(name = "notes")
+//@FeignClient(name = "notes")
 public interface NotesClient {
-    @GetMapping("/notes")
-    List<NoteDto> getNotesByPersonId(Long personId);
+//    @GetMapping("/notes")
+//    List<NoteDto> getNotesByPersonId(Long personId);
 }

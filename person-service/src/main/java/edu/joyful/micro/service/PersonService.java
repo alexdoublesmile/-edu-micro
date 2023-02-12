@@ -11,22 +11,22 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Log4j2
-@Service
-@RequiredArgsConstructor
+//@Log4j2
+//@Service
+//@RequiredArgsConstructor
 public class PersonService {
-    private final PersonRepository personRepository;
-    private final NotesClient notesClient;
+//    private final PersonRepository personRepository;
+//    private final NotesClient notesClient;
 
-    public PersonDto findPersonWithNotes(Long personId) {
-        final Person personFromDB = personRepository.findById(personId).orElseThrow();
-
-        final List<NoteDto> notesFromNotesService = notesClient.getNotesByPersonId(personId);
-
-        return PersonDto.builder()
-                .firstName(personFromDB.getFirstName())
-                .lastName(personFromDB.getLastName())
-                .notes(notesFromNotesService)
-                .build();
-    }
+//    public PersonDto findPersonWithNotes(Long personId) {
+//        final Person personFromDB = personRepository.findById(personId).orElseThrow();
+//
+//        final List<NoteDto> notesFromNotesService = notesClient.getNotesByPersonId(personId);
+//
+//        return PersonDto.builder()
+//                .firstName(personFromDB.getFirstName())
+//                .lastName(personFromDB.getLastName())
+//                .notes(notesFromNotesService)
+//                .build();
+//    }
 }

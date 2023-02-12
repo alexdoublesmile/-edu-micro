@@ -1,8 +1,6 @@
 package edu.joyful.noteservice.domain;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 
@@ -10,6 +8,8 @@ import javax.persistence.*;
 @Table(name = "notes")
 @Getter
 @Setter
+@ToString
+@EqualsAndHashCode
 @NoArgsConstructor
 public class Note {
 

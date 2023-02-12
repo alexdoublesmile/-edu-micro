@@ -14,7 +14,6 @@ import java.util.List;
 @RequiredArgsConstructor
 public class PersonController {
     private final PersonRepository personRepository;
-    private final PersonService personService;
 
     @GetMapping
     public List<Person> findPersons() {
@@ -26,8 +25,13 @@ public class PersonController {
         return personRepository.save(person);
     }
 
+//    @GetMapping("/{id}")
+//    public PersonDto findPersonWithNotes(@PathVariable Long id) {
+//        return personService.findPersonWithNotes(id);
+//    }
+
     @GetMapping("/{id}")
-    public PersonDto findPersonWithNotes(@PathVariable Long id) {
-        return personService.findPersonWithNotes(id);
+    public Person findPersonById(@PathVariable Long id) {
+        return personRepository.findById(id).orElseThrow();
     }
 }
