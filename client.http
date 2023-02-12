@@ -8,21 +8,22 @@ POST http://localhost:1010/persons
 Content-Type: application/json
 
 {
-  "firstName": "Alex",
-  "lastName": "Plohoy"
+  "firstName": "Sveta",
+  "lastName": "Svetikova"
 }
 
 ###
 GET http://localhost:1010/persons
+Content-Type: application/json
 
 ###
 POST http://localhost:1011/notes
 Content-Type: application/json
 
 {
-  "body": "Notation",
+  "body": "Notation for Sveta else",
   "personId": "3"
 }
 
 ###
-GET http://localhost:1011/notes
+GET http://localhost:1011/notes?personId=3

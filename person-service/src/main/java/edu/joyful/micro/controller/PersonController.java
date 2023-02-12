@@ -22,4 +22,9 @@ public class PersonController {
     public List<Person> findPersons() {
         return personRepository.findAll();
     }
+
+    @GetMapping("/{id}")
+    public List<PersonDto> findPersonWithNotes(@PathVariable Long id) {
+        return personService.findPersonWithNotes(id);
+    }
 }
