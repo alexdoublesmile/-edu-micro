@@ -4,8 +4,8 @@
 #  config:
 #    import: configserver:http://localhost:1001
 
-#resilience4j:
-#  circuitbreaker:
-#    instances:
-#      person-service:
-#        minimumNumberOfCalls: 5
+resilience4j:
+  circuitbreaker:
+    instances:
+      person-service:
+        minimumNumberOfCalls: 5
