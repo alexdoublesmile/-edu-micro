@@ -16,14 +16,14 @@ public class PersonController {
     private final PersonRepository personRepository;
     private final PersonService personService;
 
-    @PostMapping
-    public Person createPerson(@RequestBody Person person) {
-        return personRepository.save(person);
-    }
-
     @GetMapping
     public List<Person> findPersons() {
         return personRepository.findAll();
+    }
+
+    @PostMapping
+    public Person createPerson(@RequestBody Person person) {
+        return personRepository.save(person);
     }
 
     @GetMapping("/{id}")

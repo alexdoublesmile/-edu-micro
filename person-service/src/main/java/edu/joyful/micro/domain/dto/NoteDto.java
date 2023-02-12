@@ -7,5 +7,5 @@ import lombok.Value;
 @Builder
 public class NoteDto {
     Long id;
-    String bode;
+    String body;
 }
