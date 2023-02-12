@@ -31,7 +31,7 @@ public class PersonService {
         return PersonDto.builder()
                 .firstName(personFromDB.getFirstName())
                 .lastName(personFromDB.getLastName())
-                .notes(notesFromNotesService)
+//                .notes(notesFromNotesService)
                 .build();
     }
 }
