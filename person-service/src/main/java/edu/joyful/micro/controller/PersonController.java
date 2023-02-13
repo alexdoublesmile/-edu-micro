@@ -15,6 +15,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class PersonController {
     private int DELAY = 500;
+    private boolean isFailed;
 
     private final PersonRepository personRepository;
 
@@ -31,12 +32,21 @@ public class PersonController {
     @SneakyThrows
     @GetMapping("/{id}")
     public Person findPersonById(@PathVariable Long id) {
-//        log.info("Delaying for {}ms", DELAY += 50);
-//        Thread.sleep(DELAY);
-//
-//        log.info("Fall down :(");
-//        throw new RuntimeException();
+        log.info("Try request to DB for id={}", id);
+        isFailed = !isFailed;
 
-        return personRepository.findById(id).orElseThrow();
+        if (isFailed) {
+            log.info("Failed request for id={}", id);
+
+
+            log.info("Delaying for {}ms", DELAY += 50);
+            Thread.sleep(DELAY);
+
+            log.info("Fall down :(");
+            throw new RuntimeException();
+        } else {
+            log.info("Success request for id={}", id);
+            return personRepository.findById(id).orElseThrow();
+        }
     }
 }

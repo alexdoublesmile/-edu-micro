@@ -37,8 +37,10 @@ public class NoteService {
     }
 
     private NoteDto convertToDto(Note note) {
+        log.info("Try request to person-service for {}", note);
         PersonDto personDto = personClient.findPersonById(note.getPersonId());
 
+        log.info("Success request to person-service for {}", note);
         return NoteDto.builder()
                 .id(note.getId())
                 .body(note.getBody())
