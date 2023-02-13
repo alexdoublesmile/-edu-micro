@@ -10,11 +10,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 @FeignClient(name = "person-service")
 public interface BalancedPersonClient {
 
-    @CircuitBreaker(name = "person-service", fallbackMethod = "fallback")
+    @CircuitBreaker(name = "person-service", fallbackMethod = "getDefaultPerson")
     @GetMapping("/persons/{id}")
     PersonDto findPersonById(@PathVariable Long id);
 
-    default PersonDto fallback(Throwable exception) {
+    default PersonDto getDefaultPerson(Throwable exception) {
         return PersonDto.builder()
                 .firstName("DEFAULT_FIRST_NAME")
                 .lastName("DEFAULT_LAST_NAME")

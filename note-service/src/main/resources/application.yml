@@ -9,6 +9,9 @@ resilience4j:
     instances:
       person-service:
         minimumNumberOfCalls: 3
+        failureRateTreshold: 50
+        waitDurationOpenState: 60000
+        slowCallDurationTreshold: 30000
 feign:
   circuitbreaker:
     enabled: true

@@ -31,12 +31,12 @@ public class PersonController {
     @SneakyThrows
     @GetMapping("/{id}")
     public Person findPersonById(@PathVariable Long id) {
-        log.info("Delaying for {}ms", DELAY += 50);
-        Thread.sleep(DELAY);
+//        log.info("Delaying for {}ms", DELAY += 50);
+//        Thread.sleep(DELAY);
+//
+//        log.info("Fall down :(");
+//        throw new RuntimeException();
 
-        log.info("Fall down :(");
-        throw new RuntimeException();
-
-//        return personRepository.findById(id).orElseThrow();
+        return personRepository.findById(id).orElseThrow();
     }
 }
