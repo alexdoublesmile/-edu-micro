@@ -15,3 +15,9 @@ resilience4j:
 feign:
   circuitbreaker:
     enabled: true
+spring:
+  sleuth:
+    sampler:
+      rate: ${SLEUTH_RATE:10}
+  zipkin:
+    base-url: http://${ZIPKIN_HOST:localhost}:${ZIPKIN_PORT:9411}
