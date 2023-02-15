@@ -4,3 +4,8 @@ spring:
   cloud:
     config:
       uri: http://localhost:1001
+    vault:
+      token: 00000000-0000-0000-0000-000000000000
+      scheme: http
+      kv:
+        enabled: true
