@@ -3,21 +3,3 @@
 #    name: note-service
 #  config:
 #    import: configserver:http://localhost:1001
-
-resilience4j:
-  circuitbreaker:
-    instances:
-      person-service:
-        minimumNumberOfCalls: 3
-        failureRateTreshold: 50
-        waitDurationOpenState: 60000
-        slowCallDurationTreshold: 30000
-feign:
-  circuitbreaker:
-    enabled: true
-spring:
-  sleuth:
-    sampler:
-      rate: ${SLEUTH_RATE:10}
-  zipkin:
-    base-url: http://${ZIPKIN_HOST:localhost}:${ZIPKIN_PORT:9411}

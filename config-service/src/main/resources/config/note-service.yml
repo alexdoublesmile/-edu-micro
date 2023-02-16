@@ -1,0 +1,30 @@
+server.port: 8082
+spring:
+  jpa.open-in-view: false
+  datasource:
+    url: jdbc:mysql://${DB_HOST:localhost}:${DB_PORT:3306}/${DB_NAME:edu_notes}
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD:password}
+
+  sleuth:
+    sampler:
+      rate: ${SLEUTH_RATE:10}
+  zipkin:
+    base-url: http://${ZIPKIN_HOST:localhost}:${ZIPKIN_PORT:9411}
+
+eureka:
+  client.service-url.defaultZone: http://localhost:8761/eureka
+  instance.prefer-ip-address: true
+
+resilience4j:
+  circuitbreaker:
+    instances:
+      person-service:
+        minimumNumberOfCalls: 3
+        failureRateTreshold: 50
+        waitDurationOpenState: 60000
+        slowCallDurationTreshold: 30000
+feign:
+  circuitbreaker:
+    enabled: true
+

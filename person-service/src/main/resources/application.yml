@@ -3,12 +3,3 @@
 #    name: person-service
 #  config:
 #    import: configserver:http://localhost:1001
-
-spring:
-  sleuth:
-    sampler:
-      rate: ${SLEUTH_RATE:10}
-  zipkin:
-    base-url: http://${ZIPKIN_HOST:localhost}:${ZIPKIN_PORT:9411}
-#  datasource:
-#    password: ${postgresql.password:pass}
