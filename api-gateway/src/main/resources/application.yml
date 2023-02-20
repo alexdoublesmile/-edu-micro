@@ -10,17 +10,26 @@ spring:
           enabled: true
           lower-case-service-id: true
       routes:
-        - id: person-service
+        - id: persons
           uri: lb://person-service
           predicates:
             - Path=/persons
             - Method=GET
-        - id: note-service
+        - id: notes
           uri: lb://note-service
           predicates:
             - name: Path
               args:
                 path: /notes
+            - name: Method
+              args:
+                method: GET
+        - id: person-note
+          uri: lb://note-service
+          predicates:
+            - name: Path
+              args:
+                path-pattern: /notes/*
             - name: Method
               args:
                 method: GET
