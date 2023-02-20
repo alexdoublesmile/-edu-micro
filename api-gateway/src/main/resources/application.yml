@@ -18,8 +18,12 @@ spring:
         - id: note-service
           uri: lb://note-service
           predicates:
-            - Path=/notes
-            - Method=GET
+            - name: Path
+              args:
+                path: /notes
+            - name: Method
+              args:
+                method: GET
 
 eureka:
   client.service-url.defaultZone: http://localhost:8761/eureka
