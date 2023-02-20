@@ -1,2 +1,18 @@
 server.port: 8761
+spring:
+  application:
+    name: eureka-server
 
+eureka:
+  client:
+    fetch-registry: false
+    register-with-eureka: false
+
+logging:
+  level:
+    com:
+      netflix:
+        eureka: OFF
+        discovery: OFF
+  pattern:
+    console: %C{1.} [%-5level] %d{HH:mm:ss} - %msg%n
