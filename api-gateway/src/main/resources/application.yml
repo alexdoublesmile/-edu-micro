@@ -9,6 +9,17 @@ spring:
         locator:
           enabled: true
           lower-case-service-id: true
+      routes:
+        - id: person-service
+          uri: lb://person-service
+          predicates:
+            - Path=/persons
+            - Method=GET
+        - id: note-service
+          uri: lb://note-service
+          predicates:
+            - Path=/notes
+            - Method=GET
 
 eureka:
   client.service-url.defaultZone: http://localhost:8761/eureka
