@@ -3,7 +3,7 @@ spring:
     name: person-service
   cloud:
     config:
-      uri: http://localhost:8760
+      uri: http://localhost:8888
     vault:
       token: 00000000-0000-0000-0000-000000000000
       scheme: http
