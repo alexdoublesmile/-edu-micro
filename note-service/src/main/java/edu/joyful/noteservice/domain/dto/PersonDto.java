@@ -10,4 +10,5 @@ import lombok.extern.jackson.Jacksonized;
 public class PersonDto {
     String firstName;
     String lastName;
+    String comment;
 }

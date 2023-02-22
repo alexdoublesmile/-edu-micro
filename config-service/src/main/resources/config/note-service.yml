@@ -30,3 +30,5 @@ feign:
   circuitbreaker:
     enabled: true
 
+default:
+  comment: "person-service response failed"

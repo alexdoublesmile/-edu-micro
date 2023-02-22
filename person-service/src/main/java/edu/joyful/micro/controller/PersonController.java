@@ -39,7 +39,7 @@ public class PersonController {
             log.info("Failed request for id={}", id);
 
 
-            log.info("Delaying for {}ms", DELAY += 50);
+            log.info("Delaying for {}ms", DELAY += 500);
             Thread.sleep(DELAY);
 
             log.info("Fall down :(");
