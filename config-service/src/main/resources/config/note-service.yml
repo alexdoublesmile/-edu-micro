@@ -21,7 +21,7 @@ eureka:
 resilience4j:
   circuitbreaker:
     instances:
-      person-service:
+      person-cb:
         minimumNumberOfCalls: 3
         failureRateTreshold: 50
         waitDurationOpenState: 60000

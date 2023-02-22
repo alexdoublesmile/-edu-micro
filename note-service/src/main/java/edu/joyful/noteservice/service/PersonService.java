@@ -16,7 +16,7 @@ public class PersonService {
     private final BalancedPersonClient personClient;
     private final PersonHelper personHelper;
 
-//    @CircuitBreaker(name = "person-service", fallbackMethod = "getDefaultPerson")
+    @CircuitBreaker(name = "person-cb", fallbackMethod = "getDefaultPerson")
     public PersonDto getPersonDto(Long personId) {
         return personClient.findPersonById(personId);
     }
