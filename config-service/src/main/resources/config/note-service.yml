@@ -37,4 +37,4 @@ management:
         include: "*"
 
 default:
-  comment: "new person-service response failed"
+  comment: "new 2 person-service response failed"

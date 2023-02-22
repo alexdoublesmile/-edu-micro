@@ -3,10 +3,12 @@ package edu.joyful.noteservice.util;
 import edu.joyful.noteservice.domain.dto.PersonDto;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.stereotype.Component;
 
 @Log4j2
 @Component
+@RefreshScope
 public class PersonHelper {
 
     @Value("${default.comment}")
