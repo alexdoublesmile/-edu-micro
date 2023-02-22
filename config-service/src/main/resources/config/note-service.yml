@@ -34,7 +34,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: "*"
+        include: "refresh"
 
 default:
-  comment: "new person-service response failed"
+  comment: "person-service response failed"
