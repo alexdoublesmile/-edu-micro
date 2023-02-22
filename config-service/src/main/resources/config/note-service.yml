@@ -5,6 +5,16 @@ spring:
     url: jdbc:mysql://${DB_HOST:localhost}:${DB_PORT:3306}/${DB_NAME}
     username: ${DB_USERNAME:root}
     password: ${DB_PASSWORD}
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+  cloud:
+    bus:
+      enabled: true
+      refresh:
+        enabled: true
 
   sleuth:
     sampler:
@@ -37,4 +47,4 @@ management:
         include: "*"
 
 default:
-  comment: "person-service response failed"
+  comment: "104 person-service response failed"

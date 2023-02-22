@@ -6,5 +6,13 @@ spring:
       server:
         native:
           search-locations: file:/D:/Projects/edu/microservices/config-service/src/main/resources/config
+#        default-label: main
+      enabled: false
 #        git:
 #          uri: git@github.com:alexdoublesmile/-edu-microservices.git/config-service/src/main/resources/config/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

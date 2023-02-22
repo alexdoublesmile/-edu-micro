@@ -9,4 +9,5 @@ public class NoteDto {
     Long id;
     String body;
     PersonDto personDto;
+    String instanceId;
 }

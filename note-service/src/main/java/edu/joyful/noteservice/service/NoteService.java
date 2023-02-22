@@ -6,6 +6,7 @@ import edu.joyful.noteservice.domain.dto.PersonDto;
 import edu.joyful.noteservice.repository.NoteRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -18,6 +19,9 @@ import static java.util.stream.Collectors.toList;
 public class NoteService {
     private final NoteRepository noteRepository;
     private final PersonService personService;
+
+    @Value("${eureka.instance.instance-id}")
+    private String instanceId;
 
     public List<NoteDto> findAllWithPerson(Long personId) {
         return noteRepository.findAllByPersonId(personId)
@@ -43,6 +47,7 @@ public class NoteService {
                 .id(note.getId())
                 .body(note.getBody())
                 .personDto(personDto)
+                .instanceId(instanceId)
                 .build();
     }
 }
