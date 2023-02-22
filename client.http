@@ -33,6 +33,6 @@ GET http://localhost:8765/note-service/actuator/health
 
 ###
 POST http://localhost:8765/note-service/actuator/refresh
-#POST http://localhost:60568/actuator/refresh
+#POST http://localhost:62411/actuator/refresh
 #Content-Type: application/json
 #Accept: application/json
