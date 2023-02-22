@@ -30,5 +30,11 @@ feign:
   circuitbreaker:
     enabled: true
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
 default:
-  comment: " new person-service response failed"
+  comment: "new person-service response failed"
