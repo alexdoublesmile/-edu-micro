@@ -31,4 +31,4 @@ feign:
     enabled: true
 
 default:
-  comment: "person-service response failed"
+  comment: " new person-service response failed"
