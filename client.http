@@ -33,3 +33,10 @@ GET http://localhost:8765/note-service/actuator
 
 ###
 POST http://localhost:8765/note-service/actuator/refresh
+
+###
+POST http://localhost:8765/note-service/bus/refresh
+
+###
+#POST http://localhost:8765/note-service/bus/refresh
+POST http://localhost:51409/bus/refresh
