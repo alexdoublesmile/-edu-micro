@@ -9,3 +9,4 @@ spring:
       scheme: http
       kv:
         enabled: true
+      uri: http://localhost:8200
