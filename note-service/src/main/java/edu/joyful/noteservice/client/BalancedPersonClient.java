@@ -7,7 +7,11 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
-@FeignClient(name = "person-service", configuration = PersonFeignConfig.class)
+@FeignClient(
+        name = "person-service",
+        configuration = PersonFeignConfig.class,
+        fallback = PersonFeignFallback.class
+)
 public interface BalancedPersonClient {
 
     @GetMapping("/persons/{id}")

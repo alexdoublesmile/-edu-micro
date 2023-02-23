@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @RefreshScope
-public class PersonFallback implements BalancedPersonClient {
+public class PersonFeignFallback implements BalancedPersonClient {
 
     @Value("${default.comment}")
     private String DEFAULT_COMMENT;
