@@ -1,5 +1,6 @@
 package edu.joyful.noteservice.config;
 
+import edu.joyful.noteservice.exception.PersonFeignExceptionHandler;
 import feign.Logger;
 import feign.RequestInterceptor;
 import feign.auth.BasicAuthRequestInterceptor;
