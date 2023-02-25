@@ -46,7 +46,7 @@ spring:
           predicates:
             - name: Path
               args:
-                path-pattern: /notes/*
+                path-pattern: /notes/**
             - name: Method
               args:
                 method: GET
