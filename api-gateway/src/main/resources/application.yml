@@ -35,6 +35,9 @@ spring:
             - name: Method
               args:
                 method: GET
+          filters:
+            - TokenRelay
+            - SaveSession
         - id: person-note
           uri: lb://note-service
           predicates:
