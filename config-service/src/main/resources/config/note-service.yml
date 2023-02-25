@@ -19,7 +19,7 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issue-uri: http://localhost:9999/realms/todoapp-realm
+          issuer-uri: http://localhost:9999/realms/todoapp-realm
   sleuth:
     sampler:
       rate: ${SLEUTH_RATE:10}
