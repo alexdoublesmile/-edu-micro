@@ -15,6 +15,11 @@ spring:
       enabled: true
       refresh:
         enabled: true
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issue-uri: http://localhost:9999/realms/todoapp-realm
 
   sleuth:
     sampler:
