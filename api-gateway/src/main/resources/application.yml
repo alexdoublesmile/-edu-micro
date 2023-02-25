@@ -26,6 +26,9 @@ spring:
           predicates:
             - Path=/persons
             - Method=GET
+          filters:
+            - TokenRelay
+            - SaveSession
         - id: notes
           uri: lb://note-service
           predicates:
