@@ -3,6 +3,17 @@ server:
 spring:
   application:
     name: api-gateway
+  security:
+    oauth2:
+      client:
+        registration:
+          keycloak:
+            client-id: todoapp-client
+            client-secret: qrx2yKunAWn8f4GXaRdHUYZ4XyovqVaI
+            scope: openid
+        provider:
+          keycloak:
+            issuer-uri: http://localhost:9999/auth/realms/todoapp-realm
   cloud:
     gateway:
       discovery:
