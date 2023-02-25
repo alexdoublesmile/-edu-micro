@@ -47,6 +47,9 @@ spring:
             - name: Method
               args:
                 method: GET
+          filters:
+            - TokenRelay
+            - SaveSession
 
 eureka:
   client.service-url.defaultZone: http://localhost:8761/eureka
