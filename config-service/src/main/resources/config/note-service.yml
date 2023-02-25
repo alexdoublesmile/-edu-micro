@@ -15,11 +15,11 @@ spring:
       enabled: true
       refresh:
         enabled: true
-  security:
-    oauth2:
-      resourceserver:
-        jwt:
-          issuer-uri: http://localhost:9999/realms/todoapp-realm
+#  security:
+#    oauth2:
+#      resourceserver:
+#        jwt:
+#          issuer-uri: http://localhost:9999/realms/todoapp-realm
   sleuth:
     sampler:
       rate: ${SLEUTH_RATE:10}

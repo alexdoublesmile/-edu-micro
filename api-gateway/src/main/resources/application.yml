@@ -26,9 +26,9 @@ spring:
           predicates:
             - Path=/persons
             - Method=GET
-          filters:
-            - TokenRelay
-            - SaveSession
+#          filters:
+#            - TokenRelay
+#            - SaveSession
         - id: notes
           uri: lb://note-service
           predicates:
@@ -38,9 +38,9 @@ spring:
             - name: Method
               args:
                 method: GET
-          filters:
-            - TokenRelay
-            - SaveSession
+#          filters:
+#            - TokenRelay
+#            - SaveSession
         - id: person-note
           uri: lb://note-service
           predicates:
@@ -50,9 +50,9 @@ spring:
             - name: Method
               args:
                 method: GET
-          filters:
-            - TokenRelay
-            - SaveSession
+#          filters:
+#            - TokenRelay
+#            - SaveSession
 
 eureka:
   client.service-url.defaultZone: http://localhost:8761/eureka

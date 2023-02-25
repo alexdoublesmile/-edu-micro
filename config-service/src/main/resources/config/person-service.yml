@@ -10,11 +10,11 @@ spring:
       rate: ${SLEUTH_RATE:10}
   zipkin:
     base-url: http://${ZIPKIN_HOST:localhost}:${ZIPKIN_PORT:9411}
-  security:
-    oauth2:
-      resourceserver:
-        jwt:
-          issuer-uri: http://localhost:9999/realms/todoapp-realm
+#  security:
+#    oauth2:
+#      resourceserver:
+#        jwt:
+#          issuer-uri: http://localhost:9999/realms/todoapp-realm
 
 eureka:
   client.service-url.defaultZone: http://localhost:8761/eureka
