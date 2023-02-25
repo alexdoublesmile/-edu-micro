@@ -20,7 +20,6 @@ spring:
       resourceserver:
         jwt:
           issue-uri: http://localhost:9999/realms/todoapp-realm
-
   sleuth:
     sampler:
       rate: ${SLEUTH_RATE:10}
